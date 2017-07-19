@@ -493,6 +493,19 @@ message AccessMode {
 
   // This field is REQUIRED.
   Mode mode = 1;
+
+  enum Locality {
+    UNKOWN = 0;
+
+    // Is node local and cannot be moved to another node.
+    LOCAL = 1;
+
+    // Can be moved to another node
+    RELOCATABLE = 2;
+  }
+
+  // This field is REQUIRED.
+  Locality locality = 2
 }
 
 // The identity of the volume.
